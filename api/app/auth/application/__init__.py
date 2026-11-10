@@ -1,0 +1,1 @@
+"""Auth application use cases."""
