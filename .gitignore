@@ -58,7 +58,8 @@ compose.override.yaml
 *.sqlite3
 *.db
 
-# Database migrations are tracked in version control
+api/migrations/versions/*
+!api/migrations/versions/.gitkeep
 
 .idea/
 .vscode/
@@ -74,3 +75,4 @@ compose.override.yaml
 ehthumbs.db
 Thumbs.db
 desktop.ini
+/docs
