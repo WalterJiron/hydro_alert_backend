@@ -80,11 +80,11 @@ flowchart TD
 
 ## 2. Stack Tecnológico
 
-- **Lenguaje & Core:** Python 3.13, FastAPI y Uvicorn ASGI.
-- **Persistencia & ORM:** PostgreSQL 17, SQLAlchemy 2 (async) y driver `asyncpg`.
+- **Lenguaje y Core:** Python 3.13, FastAPI y Uvicorn ASGI.
+- **Persistencia y ORM:** PostgreSQL 17, SQLAlchemy 2 (async) y driver `asyncpg`.
 - **Migraciones de Esquema:** Alembic con ejecución asíncrona.
-- **Cliente HTTP & Scraping:** `httpx` (con timeouts y retries con backoff) y `BeautifulSoup4`.
-- **Seguridad & Criptografía:** `hashlib.scrypt` para hashes de contraseñas, SHA-256 para tokens opacos `hl_...` y normalización estricta de cédula nicaragüense.
+- **Cliente HTTP y Scraping:** `httpx` (con timeouts y retries con backoff) y `BeautifulSoup4`.
+- **Seguridad y Criptografía:** `hashlib.scrypt` para hashes de contraseñas, SHA-256 para tokens opacos `hl_...` y normalización estricta de cédula nicaragüense.
 - **Almacenamiento de Fotos:** `python-multipart` con detección por *magic bytes* y guardado directo en base de datos (`BYTEA`) para portabilidad total en contenedores.
 - **Testing:** `pytest`, `pytest-asyncio`, `pytest-env` y verificación contra base de datos PostgreSQL real.
 - **Contenedores:** Docker y Docker Compose v2 multi-stage build.
@@ -185,10 +185,6 @@ Resultado esperado: **110 passed** (unitarias, validaciones y contratos HTTP/Web
 ---
 
 ## 4. Guía de Migraciones (Alembic)
-
-### ¿Por qué las versiones están en `.gitignore`?
-
-En proyectos públicos, evitar versionar migraciones locales evita conflictos de cabeceras (*head conflicts*) entre diferentes desarrolladores y entornos de despliegue. El archivo [`migrations/env.py`](file:///c:/Users/Walter_Jiron/proyects/ProfeTania/backend/api/migrations/env.py) ya conoce todos los modelos ORM de la aplicación (`Base.metadata`), por lo que Alembic puede deducir la estructura completa de forma automática.
 
 ### Comandos frecuentes de migraciones
 
